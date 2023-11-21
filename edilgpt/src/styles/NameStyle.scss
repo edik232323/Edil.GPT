@@ -1,0 +1,28 @@
+.one{
+    margin: 0;
+    width: 100vw;
+    max-width: 100vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    p{
+        display: none;
+    }
+    img{
+        padding-left: 3.5px;
+    }
+}
+    .one:hover{
+        p{
+            display: block;
+        }
+        img{
+            display: none;
+        }
+        color: white;
+        transition: 0.3s ease-out;
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,195,253,1) 50%, rgba(252,176,69,1) 100%);
+}

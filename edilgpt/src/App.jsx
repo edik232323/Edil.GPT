@@ -1,11 +1,12 @@
 import './App.scss'
-import Name from './components/Name'
+import HomePage from '../src/pages/HomePage'
+import LoginPage from '../src/pages/LoginPage'
+import SignUpPage from './pages/SignUpPage'
 
 
 function App() {
   return (
     <>
-      <Name/>
     </>
   )
 }

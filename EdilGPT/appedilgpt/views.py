@@ -4,4 +4,4 @@ from .models import EdilModel
 
 def index(request):
     data = EdilModel.objects.all()
-    return render(request, 'appedilgpt/index.html', {'data': data})
+    return render(request, 'main/appedilgpt.html', {'data': data})

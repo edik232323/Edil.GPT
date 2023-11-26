@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/loginStyle.scss'
+import SignUpPage from '../pages/SignUpPage';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -11,25 +12,25 @@ const LoginForm = () => {
   };
 
   return (
-    <div id="LoginForm">
-      <img src="../src/assets/EdilLogo.png" alt="EDILGPTLOGO.png"width={200} height={200}/>
-      <form onSubmit={handleSubmit}>
-          <input
+    <div id="registr_page">
+      <img id='edil_logo' src="../src/assets/EdilLogo.png" alt="EDILGPTLOGO.png"width={200} height={200}/>
+      <form id='registr_form' onSubmit={handleSubmit}>
+          <input className='login_inputs'
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required placeholder='Username'
           />
-          <input
+          <input className='login_inputs'
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required placeholder='Password'
           />
-        <button type="submit">Login</button>
+        <button id='registr_button' type="submit">Login</button>
       </form>
-      <p>No Account ?
-        <a href='../src/pages/SignUpPage.jsx'>
+      <p id='registr_change'>No Account ?
+        <a id='registr_change_link' href='SignUpPage'>
           Sign Up
         </a>
       </p>

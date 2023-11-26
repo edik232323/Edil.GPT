@@ -1,0 +1,81 @@
+#registr_page{
+    width: fit-content;
+    height: fit-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+#registr_form{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+.login_inputs{
+    height: 4vh;
+    width: fit-content;
+    font-size: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: white;
+    border: solid 2px;
+    border-color: darkturquoise;
+    border-radius: 4px;
+}
+#registr_button{
+    width: 13vw;
+    border-radius: 4px;
+    color: grey;
+    font-size: 14px;
+    border: solid 2px;
+    border-color: darkturquoise;
+    background-color: white;
+    padding: 3px;
+    height: 4vh;
+    text-wrap: nowrap;
+}
+#registr_button:hover{
+    color: black;
+    background-color: rgb(245,245,245);
+    border-color: rgb(3, 255, 248);
+}
+#registr_change{
+    font-size: 16px;
+    color: black;
+}
+#registr_change_link{
+    margin-left: 5px;
+    color: black;
+    text-decoration-line: none;
+}
+#registr_change_link:hover{
+    color: blue;
+}
+@media screen and (max-width:465px) {
+    #edillogo{
+        width: 160px;
+        height: 160px;
+    }
+    #registr_button{
+        width: 17vw;
+        font-size: 12px;
+    }
+    .login_inputs{
+        font-size: 80%;
+    }
+    #registr_change{
+        font-size: 10px;
+    }
+    #registr_change_link{
+        font-size: 11px;
+    }
+}

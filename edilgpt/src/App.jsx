@@ -1,12 +1,13 @@
 import './App.scss'
 import HomePage from '../src/pages/HomePage'
 import LoginPage from '../src/pages/LoginPage'
-import SignUpPage from './pages/SignUpPage'
-
+import SignUpPage from '../src/pages/SignUpPage'
+// import Routes from '../src/routes/routes'
 
 function App() {
   return (
     <>
+    <HomePage/>
     </>
   )
 }

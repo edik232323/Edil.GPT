@@ -3,7 +3,7 @@ import "../styles/LoginPageStyle.scss"
 
 const SignUpPage = () => {
   return (
-    <div>
+    <div id="login_page">
       <SignUp/>
     </div>
   )

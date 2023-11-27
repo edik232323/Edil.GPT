@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../styles/loginStyle.scss'
-import SignUpPage from '../pages/SignUpPage';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -30,7 +29,7 @@ const LoginForm = () => {
         <button id='registr_button' type="submit">Login</button>
       </form>
       <p id='registr_change'>No Account ?
-        <a id='registr_change_link' href='SignUpPage'>
+        <a id='registr_change_link' href='SignUp'>
           Sign Up
         </a>
       </p>

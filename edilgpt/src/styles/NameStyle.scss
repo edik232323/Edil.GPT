@@ -1,4 +1,4 @@
-.one{
+#name_container{
     margin: 0;
     width: 100vw;
     max-width: 100vw;
@@ -8,21 +8,43 @@
     justify-content: center;
     font-size: 36px;
     font-family: 'Montserrat', sans-serif;
-    p{
+    #name_text{
         display: none;
+        color: white;
+
     }
-    img{
+    #name_img{
         padding-left: 3.5px;
+        z-index: 2;
     }
 }
-    .one:hover{
-        p{
+#name_transition{
+    width: 100%;
+    height: 15vh;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,195,253,1) 50%, rgba(252,176,69,1) 100%);
+    opacity: 0;
+
+    transition: 0.3s ease-in;
+
+}
+#name_container:hover{
+    #name_transition{
+        transition: 0.3s ease-out;
+        opacity: 100;
+    }
+        #name_text{
             display: block;
+            z-index: 2;
         }
-        img{
+        #name_img{
             display: none;
         }
         color: white;
+
         transition: 0.3s ease-out;
-        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,195,253,1) 50%, rgba(252,176,69,1) 100%);
+        background: white;
+
 }

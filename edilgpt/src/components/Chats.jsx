@@ -1,8 +1,10 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../styles/ChatsStyle.scss'
 import {Icon} from '@iconify/react'
 
+
 const Chats = () => {
+  let navigate = useNavigate()
   return (
     <div id='chat_container'>
       <div id="new_chat_container">
@@ -13,11 +15,13 @@ const Chats = () => {
                 <Icon id='new_chat_icon' icon="simple-line-icons:note"/>
             </div>
         </button>
+        <div id='hover_block'></div>
       </div>
       <div id='chats_container'>
         <div id='existing_chats_container'></div>
-        <div id='personal_cabinet_container'></div>
+        <div id='personal_cabinet_container' onClick={()=>navigate('/login')}>login</div>
       </div>
+      
     </div>
   )
 }

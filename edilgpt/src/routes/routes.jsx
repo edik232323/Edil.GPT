@@ -1,8 +1,10 @@
-import HomePage from "../../edilgpt/src/pages/HomePage"
-import LoginPage from "../../edilgpt/src/pages/LoginPage"
-import SignUpPage from "../../edilgpt/src/pages/SignUpPage"
-import ErrorPage from "../../edilgpt/src/pages/ErrorPage"
+import HomePage from '../pages/HomePage'
+import LoginPage from "../pages/LoginPage"
+import SignUpPage from "../pages/SignUpPage"
+import ErrorPage from "../pages/ErrorPage"
+import CabinetPage from '../pages/CabinetPage'
 import {Routes,Route} from 'react-router-dom'
+import DataChangePage from '../pages/DataChangePage'
 const MainRoutes = () => {
     const PUBLIC_ROUTES=[
         {
@@ -22,6 +24,14 @@ const MainRoutes = () => {
             element:<ErrorPage/>,
             path:'/error',
             id:4,
+        },{
+            element:<CabinetPage/>,
+            path:'/cabinet',
+            id:5,
+        },{
+            element:<DataChangePage/>,
+            path:'/edit',
+            id:5,
         },
     ]
   return(

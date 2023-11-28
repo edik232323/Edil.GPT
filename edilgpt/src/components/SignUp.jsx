@@ -20,7 +20,7 @@ const LoginForm = () => {
 
   return (
     <div id="registr_page">
-      <img id='edil_logo' src="../src/assets/EdilLogo.png" alt="EDILGPTLOGO.png" width={200} height={200} />
+      <img id='edil_logo' src="../src/assets/EdilGPTLogo1.png" alt="EDILGPTLOGO.png" width={200} height={200} />
       <form id='registr_form' onSubmit={handleSubmit}>
         <input className='login_inputs'
           type="text"

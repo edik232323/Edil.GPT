@@ -1,0 +1,58 @@
+#cabinet-container{
+    width: 50vw;
+    height: 90vh;
+}
+#profile_out{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 70vh;
+}
+#profile_picture{
+    border: solid 2px;
+    border-radius: 50%;
+    border-color: black;
+}
+#profile_name{
+    font-size: 36px;
+    font-family: 'Montserrat',sans-serif;
+}
+#log_out_button{
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+}
+#log_out_icon{
+    width: 30px;
+    height: 30px;
+}
+#info_conrainer{
+    width: 60vh;
+    display: flex;
+    justify-content: center;
+    
+}
+#data_container{
+    font-family: 'Montserrat',sans-serif;
+    width: 90%;
+    background-color: rgb(240, 240, 240);
+    border: solid 2px;
+    border-radius: 7px;
+    border-color: rgb(200, 200, 200);
+    padding: 10px 5px;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#info_header{
+    margin: 0;
+}
+#info_list{
+    margin: 0;
+}

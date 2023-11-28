@@ -1,7 +1,7 @@
 #chat_container{
     width: 235px;
     background-color: blue;
-    height: 85vh;
+    height: 84.8vh;
     padding: 5px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -32,19 +32,6 @@
     box-shadow: rgb(255, 255, 255) 0px 0px 20px;
     transform: scale(0.99);
     transition: 0.4s;
-}
-#hover_block{
-    display: none;
-    width: calc(100%/1.0);
-    height: 60px;
-    background-color: purple;
-    position: absolute;
-    left: 0;
-}
-#new_chat_button:hover{
-    #hover_block{
-        
-    }
 }
 #new_chat_icon{
     margin-bottom: 2px;

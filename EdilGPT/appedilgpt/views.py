@@ -1,22 +1,55 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import AllowAny
+from rest_framework_simplejwt.tokens import RefreshToken
 from .models import EdilModel
 from django.contrib.auth.forms import UserCreationForm
+from rest_framework import generics, permissions
+from .serializers import EdilModelSerializer, RegisterSerializer, LoginSerializer, LogOutSerializer
+from django.contrib.auth import authenticate, login
+from django.http import JsonResponse
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
 def index(request):
     data = EdilModel.objects.all()
     return render(request, 'main/appedilgpt.html', {'data': data})
 
-def SignUpPage(request):
-    form = UserCreationForm()
+class SignUpPage(generics.CreateAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = RegisterSerializer
 
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-        else:
-            print(form.errors)
+class LogOutView(generics.GenericAPIView):
+    serializer_class = LogOutSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
 
-    context = {'form':form}
-    return render(request, 'main/SignUpPage.html', context)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+class LoginAPI(APIView):
+    def post(self, request):
+        serializer = LoginSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = authenticate(**serializer.validated_data)
+        if user:
+            refresh = RefreshToken.for_user(user)
+            return Response(data={
+                "refresh": str(refresh),
+                "access": str(refresh.access_token)
+            })
+        return Response(status=status.HTTP_401_UNAUTHORIZED,
+                        data={'error': 'Username or password wrong!'})
+
+class EdilModelListCreateView(generics.ListCreateAPIView):
+    queryset = EdilModel.objects.all()
+    serializer_class = EdilModelSerializer
+
+class EdilModelDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = EdilModel.objects.all()
+    serializer_class = EdilModelSerializer

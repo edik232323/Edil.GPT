@@ -6,6 +6,6 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('appedilgpt.url')),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/', include('appedilgpt.url')),
 ]

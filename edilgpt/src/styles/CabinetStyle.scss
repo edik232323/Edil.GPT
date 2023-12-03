@@ -1,6 +1,11 @@
-#cabinet-container{
-    width: 50vw;
+#cabinet_container{
+    width: 100vw;
     height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 70px;
 }
 #profile_out{
     display: flex;
@@ -31,15 +36,15 @@
     width: 30px;
     height: 30px;
 }
-#info_conrainer{
-    width: 60vh;
+#data_container{
+    width: 70vw;
+    min-width: fit-content;
     display: flex;
     justify-content: center;
-    
 }
-#data_container{
+#info_container{
     font-family: 'Montserrat',sans-serif;
-    width: 90%;
+    width: 100%;
     background-color: rgb(240, 240, 240);
     border: solid 2px;
     border-radius: 7px;
@@ -52,7 +57,43 @@
 }
 #info_header{
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#info_list{
+.info_list{
     margin: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    list-style-type: none;
+    text-wrap: nowrap;
+    width: auto;
+    justify-content: space-around;
+    padding: 0;
+}
+.info_element{
+    width: 10vw;
+    min-width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    border: solid 1px;
+    border-radius: 3px;
+    padding: 3px;
+    cursor: default;
+}
+#edit_button{
+    align-self: end;
+    min-width: fit-content;
+    width: 150px;
+    margin-right: 10px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Montserrat',sans-serif;
+    cursor: pointer;
 }

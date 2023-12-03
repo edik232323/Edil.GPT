@@ -12,17 +12,32 @@ const Cabinet = () => {
         <p id='profile_name'>Username</p>
         <button id='log_out_button' onClick={()=>navigate('/signup')}><Icon id='log_out_icon' icon="ic:sharp-log-out" /></button>
       </div>
-      <div id='info_container'>
-        <div id='data_container'>
-            <h1 id='info_header'>Account Information</h1>
-            <ul id='info_list'>
+      <div id='data_container'>
+        <div id='info_container'>
+            <h2 id='info_header'>Account Information</h2>
+            <ul className='info_list'>
                 <li className='info_element' placeholder='First Name'>First Name</li>
                 <li className='info_element' placeholder='Second Name'>Second Name</li>
-                <li className='info_element' placeholder='Username'>Username</li>
                 <li className='info_element' placeholder='Date of Birth'>Date of Birth</li>
             </ul>
-            <button onClick={()=>navigate('/edit')}></button>
+            <ul className='info_list'>
+              <li className='info_element' placeholder='Username'>Username</li>
+              <li className='info_element' placeholder='Email'>my@email.com</li>
+            </ul>
+            <button id='edit_button' onClick={()=>navigate('/edit')}>
+              edit account information
+              <Icon icon="ep:edit" />
+            </button>
+            <div id="statistics_container">
+              <h2 id='statistics_header'>Statistics</h2>
+            </div>
         </div>
+      </div>
+      <div id="customize_container">
+        <a id='customize_button' href='/customize'>
+          CUSTOMIZE
+          <Icon icon="material-symbols-light:star-outline" />
+        </a>
       </div>
     </div>
   )

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'appedilgpt',
     'rest_framework',
+    'chatgpt'
 ]
 
 MIDDLEWARE = [

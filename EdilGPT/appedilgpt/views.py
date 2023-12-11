@@ -32,20 +32,22 @@ class LogOutView(generics.GenericAPIView):
 
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 class LoginAPI(APIView):
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        user = authenticate(**serializer.validated_data)
-        if user:
+
+        user = authenticate(request, username=serializer.validated_data['username'], password=serializer.validated_data['password'])
+
+        if user is not None:
             refresh = RefreshToken.for_user(user)
             return Response(data={
                 "refresh": str(refresh),
-                "access": str(refresh.access_token)
+                "access": str(refresh.token_backend)
             })
-        return Response(status=status.HTTP_401_UNAUTHORIZED,
-                        data={'error': 'Username or password wrong!'})
-
+        else:
+            return Response(status=status.HTTP_401_UNAUTHORIZED, data={'error': 'Username or password is incorrect!'})
 class EdilModelListCreateView(generics.ListCreateAPIView):
     queryset = EdilModel.objects.all()
     serializer_class = EdilModelSerializer

@@ -44,7 +44,7 @@ class LoginAPI(APIView):
             refresh = RefreshToken.for_user(user)
             return Response(data={
                 "refresh": str(refresh),
-                "access": str(refresh.token_backend)
+                "access": str(refresh.access_token)
             })
         else:
             return Response(status=status.HTTP_401_UNAUTHORIZED, data={'error': 'Username or password is incorrect!'})

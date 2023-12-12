@@ -8,9 +8,10 @@
     justify-content: center;
     font-size: 36px;
     font-family: 'Montserrat', sans-serif;
+    background-color: rgb(50,50,50);
     #name_text{
         display: none;
-        color: white;
+        color: black;
     }
     #name_img{
         padding-left: 3.5px;
@@ -39,9 +40,9 @@
         #name_img{
             display: none;
         }
-        color: white;
+        color: black;
 
         transition: 0.3s ease-out;
-        background: white;
+        background: black;
 
 }

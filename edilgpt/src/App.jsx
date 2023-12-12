@@ -11,9 +11,11 @@ export const UserContext = createContext('user');
 
 function App() {
   const [user, setUser] = useState({
-    username: 'username',
-    firstname: 'First name',
-    secondname: 'Second Name'
+    username: 'G-DOC69',
+    firstname: 'Erlan',
+    secondname: 'Turarov',
+    birthday:'30/03/05',
+    email:'erlan.turar.5@gmail.com',
   })
 
   return (

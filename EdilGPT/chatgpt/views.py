@@ -8,7 +8,7 @@ from openai import OpenAI
 # Create your views here.
 
 client = OpenAI(
-    api_key="",
+    api_key="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",
 )
 
 class chatgptAudioView(APIView):

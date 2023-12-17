@@ -9,7 +9,8 @@ const HomePage = () => {
   return (
     <div id='home_page'>
       <Name/>
-        {isAuth ? <Chats/> : 'Ты Эдиль'}
+        {/* {isAuth ? <Chats/> : 'Ты Эдиль'} */}
+      <Chats/>
     </div>
   )
 }

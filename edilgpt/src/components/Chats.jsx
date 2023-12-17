@@ -20,12 +20,36 @@ const Chats = () => {
         </button>
       </div>
       <div id='chats_container'>
-        <div id='existing_chats_container'>
-          asdasdasd
+        <div id="existing_chats_wrapper">
+          <div id='existing_chats_container'>
+            <div className="time">Previous 7 days</div>
+            <div className="chat"><p className='chat_title'>Email Length Guidelines</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>login Form Creationasdadawdawd</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Toggle Visibility</p><div className="text_hide"></div></div>
+            <div className="time">Previous 30 days</div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+            <div className="chat"><p className='chat_title'>Pink Shirts</p><div className="text_hide"></div></div>
+
+          </div>
         </div>
         <div id='personal_cabinet_container' onClick={()=>navigate('/cabinet')}>{user.username}<Icon icon="ph:user" id='user_picture'/></div>
-      </div>
-      
+      </div>  
     </div>
   )
 }

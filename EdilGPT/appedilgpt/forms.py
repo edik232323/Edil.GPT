@@ -1,7 +1,9 @@
-from django.forms import ModelForm
-from .models import Order
 
-class OrderForm(ModelForm):
+from django import forms
+from django.contrib.auth.forms import UserChangeForm
+from .models import UserProfile
+
+class UserProfileForm(UserChangeForm):
     class Meta:
-        model = Order
-        fields = '__all__'
+        model = UserProfile
+        fields = ('bio', )

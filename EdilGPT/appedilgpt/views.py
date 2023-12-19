@@ -12,6 +12,23 @@ from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from django.contrib.auth.decorators import login_required
+from .models import LoginEvent
+
+
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
+
+@login_required
+def view_login_statistics(request):
+    user = request.user
+    total_logins = LoginEvent.objects.filter(user=user).count()
+
+    # Add other statistics as needed
+
+    return render(request, 'main/login_statistics.html', {'total_logins': total_logins})
+
 
 def index(request):
     data = EdilModel.objects.all()
@@ -44,10 +61,16 @@ class LoginAPI(APIView):
             refresh = RefreshToken.for_user(user)
             return Response(data={
                 "refresh": str(refresh),
-                "access": str(refresh.access_token)
+                "access": str(refresh.access_token),
+                "user": {
+                    "id": user.id,
+                    "username": user.username,
+                    "email": user.email,
+                }
             })
         else:
             return Response(status=status.HTTP_401_UNAUTHORIZED, data={'error': 'Username or password is incorrect!'})
+
 class EdilModelListCreateView(generics.ListCreateAPIView):
     queryset = EdilModel.objects.all()
     serializer_class = EdilModelSerializer

@@ -4,7 +4,8 @@ import '../styles/CabinetStyle.scss'
 import { Icon } from '@iconify/react';
 import { useContext } from 'react';
 import { UserContext } from '../App';
-import ActivityUser from "./charts/ActivityUser.jsx";
+import ActivityMonth from "./charts/ActivityMonth.jsx";
+import ActivityWeek from './charts/ActivityWeek.jsx';
 
 const Cabinet = () => {
     let navigate = useNavigate()
@@ -36,11 +37,11 @@ const Cabinet = () => {
               <div id="statistics_container">
                 <div className="statistics_box">
                   <h3 className='statistic_header'>Activity in the last five monthes</h3>
-                  <ActivityUser />
+                  <div className="statistic_chart"><ActivityMonth/></div>
                 </div>
                 <div className="statistics_box">
                   <h3 className='statistic_header'>Activity in the last seven days</h3>
-                  <img className='statistic_png' src="../src/assets/Statistics-2.png" alt="" />
+                  <div className="statistic_chart"><ActivityWeek/></div>
                 </div>
               </div>
         </div>

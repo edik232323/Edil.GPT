@@ -2,7 +2,11 @@ from django.contrib.auth.models import User
 from rest_framework import serializers, generics
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.exceptions import TokenError
-from .models import EdilModel
+from .models import EdilModel, UserProfile
+from django.contrib.auth import get_user_model
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+
 
 class EdilModelSerializer(serializers.ModelSerializer):
     class Meta:
@@ -28,18 +32,19 @@ class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField(write_only=True)
 
+
+User = get_user_model()
+
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = UserProfile  # Use the custom user model
         fields = ('username', 'password', 'email')
 
-    def create(self, validated_data):
-        user = User.objects.create(
-            username=validated_data['username'],
-            email=validated_data['email']
-        )
 
-        user.set_password(validated_data['password'])
-        user.save()
+def create_user_profile(self, instance, validated_data):
+    UserProfile.objects.create(user=instance)
 
-        return user
+
+@receiver(post_save, sender=UserProfile)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()

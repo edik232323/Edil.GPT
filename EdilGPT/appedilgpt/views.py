@@ -23,12 +23,16 @@ def profile(request):
 @login_required
 def view_login_statistics(request):
     user = request.user
-    total_logins = LoginEvent.objects.filter(user=user).count()
 
-    # Add other statistics as needed
+    # Check if the user is authenticated
+    if user.is_authenticated:
+        total_logins = LoginEvent.objects.filter(user=user).count()
 
-    return render(request, 'main/login_statistics.html', {'total_logins': total_logins})
+        # Add other statistics as needed
 
+        return render(request, 'main/login_statistics.html', {'total_logins': total_logins})
+    else:
+        return render(request, 'main/login_statistics.html', {'error': 'User not authenticated'})
 
 def index(request):
     data = EdilModel.objects.all()

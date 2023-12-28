@@ -13,21 +13,24 @@ const Cabinet = () => {
     
   return (
     <div id='cabinet_container'>
+      <div id="content_blocker">
+      <Icon icon="carbon:in-progress-error" color="#900" width="300" height="300" />
+      </div>
       <div id='profile_out'>
         <Icon icon="ph:user"id='profile_picture' width={120} height={120}/>
-        <p id='profile_name'>{user.username}</p>
+        <p id='profile_name'>G-DOC</p>
         <button id='log_out_button' onClick={()=>navigate('/signup')}><p id='log_out_text'>LOG OUT</p><Icon id='log_out_icon' icon="ic:sharp-log-out" /></button>
       </div>
       <div id='main_container'>
         <div id='info_container'>
             <h2 id='info_header'>Account Information</h2>
             <ul className='info_list'>
-                <li className='info_element' placeholder='First Name'>{user.firstname}</li>
-                <li className='info_element' placeholder='Second Name'>{user.secondname}</li>
+                <li className='info_element' Name='First Name'>Erlan</li>
+                <li className='info_element' Name='Second Name'>Turarov</li>
             </ul>
             <ul className='info_list'>
-              <li className='info_element' placeholder='Date of Birth'>{user.birthday}</li>
-              <li className='info_element' placeholder='Email'>{user.email}</li>
+              <li className='info_element' Name='Date of Birth'>30.03.05</li>
+              <li className='info_element' Name='Email'>erlan.turarov@alatoo.edu.kg</li>
             </ul>
             <button id='edit_button' onClick={()=>navigate('/edit')}>
               <p id='edit_button_text'>edit account information</p>

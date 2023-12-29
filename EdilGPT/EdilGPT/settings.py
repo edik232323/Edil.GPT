@@ -30,8 +30,15 @@ INSTALLED_APPS = [
     'appedilgpt',
     'rest_framework',
     'rest_framework_simplejwt',
+    'rest_framework.authtoken',
     'chatgpt',
-    'corsheaders'
+    'corsheaders',
+    'allauth',
+    'allauth.account',
+    'dj_rest_auth',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -44,6 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -164,9 +172,20 @@ SIMPLE_JWT = {
 }
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3  # Set as needed
+EMAIL_HOST_USER = 'edik.toraev2211@mail.ru'
+EMAIL_HOST_PASSWORD = '19722006edikcoole'#kpuVzxycTa94CU3snkwU
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 587  # Use the appropriate port for your email host
+EMAIL_USE_TLS = True
+
+SITE_ID = 1
